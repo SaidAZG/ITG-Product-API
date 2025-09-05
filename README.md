@@ -110,3 +110,5 @@ La aplicación consume la siguiente API para obtener el listado de productos:
 *   Pruebas unitarias y de UI.
 *   Manejo de errores más detallado y específico en la UI.
 *   Animaciones de transición más elaboradas.
+
+Video Evidencia Adjunta: https://drive.google.com/file/d/1PFSShRVACT_ehYFWaGXu4_iiznmLiI9p/view?usp=sharing
