@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.example.itgproductapiapp.ui.screens.main.MainScreen
+import com.example.itgproductapiapp.ui.screens.productList.ProductListScreen
 
 @Composable
 fun MainNavHost(
@@ -34,7 +35,7 @@ fun MainNavHost(
         }
 
         composable<ProductListScreen>{
-
+            ProductListScreen()
         }
     }
 }
