@@ -1,7 +1,6 @@
 package com.example.itgproductapiapp.ui.screens.productList
 
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -14,14 +13,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.itgproductapiapp.data.api.model.Producto
+import com.example.itgproductapiapp.data.api.model.toJson
 import com.example.itgproductapiapp.ui.components.ProductCard
-import kotlin.collections.get
 
 @Composable
 fun ProductListScreen(
     viewModel: ProductListViewModel = hiltViewModel(),
-    showProduct: (Producto) -> Unit = {}
+    showProduct: (String) -> Unit = {}
 ) {
     val state = viewModel.state.collectAsState()
 
@@ -47,7 +45,7 @@ fun ProductListScreen(
                         ProductCard(
                             producto = product,
                             onItemClick = {
-                                showProduct(product)
+                                showProduct(product.toJson())
                             }
                         )
                     }

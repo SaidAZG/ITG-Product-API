@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.example.itgproductapiapp.ui.screens.main.MainScreen
 import com.example.itgproductapiapp.ui.screens.productList.ProductListScreen
+import com.google.gson.Gson
 
 @Composable
 fun MainNavHost(
@@ -23,13 +24,9 @@ fun MainNavHost(
     ){
         composable<MainScreen>{ backStackEntry ->
             val selectedProduct = backStackEntry.toRoute<MainScreen>()
+
             MainScreen(
-                product = SelectedProduct(
-                    name = selectedProduct.name,
-                    price = selectedProduct.price,
-                    category = selectedProduct.category,
-                    imageUrl = selectedProduct.imageUrl,
-                ),
+                product = selectedProduct.selectedProductDetail,
                 goToProductList = { navController.navigate(ProductListScreen) }
             )
         }
@@ -37,12 +34,7 @@ fun MainNavHost(
         composable<ProductListScreen>{
             ProductListScreen(
                 showProduct = { product ->
-                    navController.navigate(MainScreen(
-                        name = product.nombre,
-                        price = product.precioRegular,
-                        category = product.codigoCategoria,
-                        imageUrl = product.urlImagenes
-                    ))
+                    navController.navigate(MainScreen(product))
                 }
             )
         }

@@ -1,5 +1,6 @@
 package com.example.itgproductapiapp.data.api.model
 
+import com.google.gson.Gson
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
 
@@ -28,3 +29,16 @@ data class Producto(
     @SerialName("montoDescuento") var montoDescuento: Double? = null
 
 )
+
+fun Producto.toJson(): String {
+    return Gson().toJson(this)
+}
+
+fun String.toProduct(): Producto? {
+    return try {
+        Gson().fromJson(this, Producto::class.java)
+    } catch (e: Exception) {
+        e.printStackTrace()
+        null
+    }
+}
