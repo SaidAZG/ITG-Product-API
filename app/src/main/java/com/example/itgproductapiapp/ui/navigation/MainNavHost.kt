@@ -35,7 +35,16 @@ fun MainNavHost(
         }
 
         composable<ProductListScreen>{
-            ProductListScreen()
+            ProductListScreen(
+                showProduct = { product ->
+                    navController.navigate(MainScreen(
+                        name = product.nombre,
+                        price = product.precioRegular,
+                        category = product.codigoCategoria,
+                        imageUrl = product.urlImagenes
+                    ))
+                }
+            )
         }
     }
 }

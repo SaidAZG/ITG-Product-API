@@ -14,12 +14,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.itgproductapiapp.data.api.model.Producto
 import com.example.itgproductapiapp.ui.components.ProductCard
 import kotlin.collections.get
 
 @Composable
 fun ProductListScreen(
-    viewModel: ProductListViewModel = hiltViewModel()
+    viewModel: ProductListViewModel = hiltViewModel(),
+    showProduct: (Producto) -> Unit = {}
 ) {
     val state = viewModel.state.collectAsState()
 
@@ -42,7 +44,12 @@ fun ProductListScreen(
                 ){
                     items(state.value.products.size) { index ->
                         val product = state.value.products[index]
-                        ProductCard(producto = product)
+                        ProductCard(
+                            producto = product,
+                            onItemClick = {
+                                showProduct(product)
+                            }
+                        )
                     }
                 }
             }
