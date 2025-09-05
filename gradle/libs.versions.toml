@@ -13,6 +13,7 @@ daggerHiltPlugin = "2.57.1"
 daggerHilt = "2.57.1"
 retrofit = "3.0.0"
 navigationCompose = "2.9.3"
+hilt-viewModels = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,6 +35,8 @@ kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-seria
 
 dagger-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "daggerHilt" }
 dagger-hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "daggerHilt" }
+
+hilt-viewModels = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-viewModels" }
 
 retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit2-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }

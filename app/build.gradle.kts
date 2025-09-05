@@ -65,6 +65,8 @@ dependencies {
 
     implementation(libs.kotlinx.serialization)
 
+    implementation(libs.hilt.viewModels)
+
     implementation(libs.dagger.hilt.android)
     ksp(libs.dagger.hilt.android.compiler)
 
