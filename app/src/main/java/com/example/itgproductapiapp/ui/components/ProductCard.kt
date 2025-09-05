@@ -21,6 +21,7 @@ import com.example.itgproductapiapp.data.api.model.Producto
 import com.example.itgproductapiapp.ui.theme.productDescription
 import com.example.itgproductapiapp.ui.theme.productName
 import com.example.itgproductapiapp.ui.theme.productPrice
+import com.example.itgproductapiapp.utils.formatPrice
 import kotlin.collections.isNotEmpty
 
 @Composable
@@ -53,7 +54,7 @@ fun ProductCard(
             }
             Column(modifier = Modifier.padding(horizontal = 8.dp)){
                 Text("${producto.nombre}", style = productName)
-                Text("$ ${producto.precioRegular}", style = productPrice)
+                Text("$ ${producto.precioRegular?.formatPrice()}", style = productPrice)
                 Text("Categoría: ${producto.codigoCategoria}", style = productDescription)
             }
         }

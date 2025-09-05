@@ -30,6 +30,7 @@ import com.example.itgproductapiapp.data.api.model.Producto
 import com.example.itgproductapiapp.ui.theme.productDescription
 import com.example.itgproductapiapp.ui.theme.productName
 import com.example.itgproductapiapp.ui.theme.productPrice
+import com.example.itgproductapiapp.utils.formatPrice
 
 @Composable
 fun DetailedProductCard(
@@ -99,7 +100,7 @@ fun DetailedProductCard(
             }
             Column(modifier = Modifier.padding( start = 16.dp, end = 16.dp, bottom = 16.dp)){
                 Text("${producto.nombre}", style = productName)
-                Text("Precio Regular: $ ${producto.precioRegular}", style = productPrice)
+                Text("Precio Regular: $ ${producto.precioRegular?.formatPrice()}", style = productPrice)
                 Text("Categoría: ${producto.codigoCategoria}", style = productDescription)
             }
         }
