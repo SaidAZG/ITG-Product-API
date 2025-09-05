@@ -32,3 +32,30 @@ val Typography = Typography(
     )
     */
 )
+
+val productName: TextStyle
+    get() = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp
+    )
+
+val productDescription: TextStyle
+    get() = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp
+    )
+
+val productPrice: TextStyle
+    get() = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp
+    )
