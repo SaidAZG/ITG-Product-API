@@ -13,7 +13,8 @@ import com.example.itgproductapiapp.ui.navigation.SelectedProduct
 
 @Composable
 fun MainScreen(
-    product: SelectedProduct
+    product: SelectedProduct,
+    goToProductList: () -> Unit
 ){
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -28,7 +29,9 @@ fun MainScreen(
             } ?: Text(text = "No has seleccionado\nningún producto", textAlign = TextAlign.Center)
         }
         Button(
-            onClick = {  }
+            onClick = {
+                goToProductList()
+            }
         ) {
             Text(text = "Ver Lista de Productos")
         }

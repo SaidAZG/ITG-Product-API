@@ -28,7 +28,8 @@ fun MainNavHost(
                     price = selectedProduct.price,
                     category = selectedProduct.category,
                     imageUrl = selectedProduct.imageUrl,
-                )
+                ),
+                goToProductList = { navController.navigate(ProductListScreen) }
             )
         }
 
