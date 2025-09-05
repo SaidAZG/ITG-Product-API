@@ -62,4 +62,7 @@ dependencies {
 
     implementation(libs.dagger.hilt.android)
     ksp(libs.dagger.hilt.android.compiler)
+
+    implementation(libs.retrofit2)
+    implementation(libs.retrofit2.converter.gson)
 }
