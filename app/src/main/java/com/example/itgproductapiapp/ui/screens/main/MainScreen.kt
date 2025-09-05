@@ -3,13 +3,16 @@ package com.example.itgproductapiapp.ui.screens.main
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import com.example.itgproductapiapp.data.api.model.toProduct
+import com.example.itgproductapiapp.ui.components.DetailedProductCard
 
 @Composable
 fun MainScreen(
@@ -25,11 +28,10 @@ fun MainScreen(
             contentAlignment = Alignment.Center
         ) {
             product?.toProduct()?.let {
-                Column{
-                    Text(text = it.nombre.toString())
-                    Text(text = it.precioRegular.toString())
-                    Text(text = it.codigoCategoria.toString())
-                }
+                DetailedProductCard(
+                    modifier = Modifier.padding(horizontal = 16.dp),
+                    producto = it
+                )
             } ?: Text(text = "No has seleccionado\nningún producto", textAlign = TextAlign.Center)
         }
         Button(
