@@ -19,12 +19,16 @@ import kotlin.collections.isNotEmpty
 @Composable
 fun ProductCard(
     modifier: Modifier = Modifier,
-    producto: Producto
+    producto: Producto,
+    onItemClick: (Producto) -> Unit = {}
 ) {
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(bottom =  8.dp)
+            .padding(bottom =  8.dp),
+        onClick = {
+            onItemClick(producto)
+        }
     ) {
         Row{
             if (producto.urlImagenes.isNotEmpty()) {
