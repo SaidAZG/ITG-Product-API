@@ -59,7 +59,7 @@ fun DetailedProductCard(
                     AsyncImage(
                         model = producto.urlImagenes[pageIndex],
                         contentDescription = "Imagen del producto ${pageIndex + 1}",
-                        contentScale = ContentScale.Crop,
+                        contentScale = ContentScale.Fit,
                         modifier = Modifier.fillMaxWidth()
                     )
                 }
